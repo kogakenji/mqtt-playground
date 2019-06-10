@@ -1,0 +1,14 @@
+[[package]]
+category = "main"
+description = "MQTT version 3.1.1 client class"
+name = "paho-mqtt"
+optional = false
+python-versions = "*"
+version = "1.4.0"
+
+[metadata]
+content-hash = "497dd2d68e273e6033b013e6baa85ddb5c0160728ac7d289af0f617919247e1f"
+python-versions = "^3.6"
+
+[metadata.hashes]
+paho-mqtt = ["e440a052b46d222e184be3be38676378722072fcd4dfd2c8f509fb861a7b0b79"]
