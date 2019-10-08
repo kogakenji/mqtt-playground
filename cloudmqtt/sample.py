@@ -6,7 +6,7 @@
 # 
 # 1. Redistributions of source code must retain the above copyright notice,
 #   this list of conditions and the following disclaimer.
-# 2. Redistributions in binary form must reproduce the above copyright
+# 2. Redistributions in binary form must reproduce the above copyrightras
 #   notice, this list of conditions and the following disclaimer in the
 #   documentation and/or other materials provided with the distribution.
 # 3. Neither the name of mosquitto nor the names of its
@@ -35,7 +35,7 @@ import LM75
 # Define event callbacks
 
 
-def on_connect(mosq, obj, rc):
+def on_connect(mosq, obj, rc, other_unkown_parameter):
     # print ("on_connect:: Connected with result code "+ str ( rc ) )
     # print("rc: " + str(rc))
     print("")
@@ -75,7 +75,8 @@ client.on_log = on_log
 # user name has to be called before connect - my notes.
 client.username_pw_set("ijuqmbhs", "QaqNMZ3yYdwE")
 
-client.connect('soldier.cloudmqtt.com', 11515, 60)
+# client.connect('soldier.cloudmqtt.com', 11515, 60)
+client.connect('soldier.cloudmqtt.com', 11515)
 client.loop_start()
 client.subscribe("/auscasa", 0)
 
@@ -85,7 +86,8 @@ run = True
 while run:
     # msg = random.randint(15, 50)
     celsius_temp = sensor.getCelsius()
+    print(celsius_temp) 
     client.publish("/auscasa/temperature", celsius_temp)
-    time.sleep(5*60)  # wait 5 minutes between measurements
+    time.sleep(60)  # wait 1 minute between measurements
     # client.publish("/auscasa", "OFF")
     # time.sleep(2)
