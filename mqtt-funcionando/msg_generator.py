@@ -18,6 +18,15 @@ mqttclient = mqtt.Client(client_id="mqtt-msg-generator",
 mqttclient.connect(broker, port=int(port))
 
 
+def publish_humidity():
+    """
+    Publishes a random temperature between 15 and 40
+    """
+    humidity = random.randrange(10, 80)
+    mqttclient.publish("humidity", humidity)
+    time.sleep(3)
+
+
 def publish_temperature():
     """
     Publishes a random temperature between 15 and 40
@@ -26,7 +35,7 @@ def publish_temperature():
         temperature = random.randrange(15, 40)
         mqttclient.publish("temperature", temperature)
         time.sleep(3)
-
+        publish_humidity()
 
 # def publish_random():
 #     element = 'home'
@@ -52,3 +61,4 @@ if __name__ == "__main__":
     print('Messages are published on topic %s/#... -> CTRL + C to shutdown' \
     % element)
     publish_temperature()
+    publish_humidity()
