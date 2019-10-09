@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Copyright (c) 2010,2011 Roger Light <roger@atchoo.org>
 # All rights reserved.
 # 
@@ -88,6 +89,6 @@ while run:
     celsius_temp = sensor.getCelsius()
     print(celsius_temp) 
     client.publish("/auscasa/temperature", celsius_temp)
-    time.sleep(60)  # wait 1 minute between measurements
+    time.sleep(15*60)  # wait 15 minutes between measurements
     # client.publish("/auscasa", "OFF")
     # time.sleep(2)
