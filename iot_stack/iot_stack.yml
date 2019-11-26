@@ -1,8 +1,9 @@
 # Use root/example as user/password credentials
 version: '3.1'
-
 services:
 
+
+# mongodb
   mongo:
     image: mongo:4.2
     container_name: mongodb
@@ -12,7 +13,6 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - 27017:27017
-
 
 # web interface for mongo db. access it using http://localhost:8081
   mongo-express:
@@ -48,7 +48,7 @@ services:
       - 9001:9001
 
   node-red:
-    image: nodered/node-red-docker
+    image: nodered/node-red:1.0.2
     restart: always
     ports: 
       - 1880:1880
@@ -59,7 +59,7 @@ services:
       - "~/Docker/node-red-data:/data"
 
   influxdb:
-    image: influxdb:latest
+    image: influxdb:1.5.4
     container_name: influxdb
     restart: always
     environment:
@@ -75,12 +75,28 @@ services:
     volumes:
      - "influxdb-volume"
 
+  postgresql:
+    image: postgres:12.0
+    container_name: postgres
+    restart: always
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: meupassword
+        POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    volumes:
+    - "postgres-volume"
+  
 #Mapping of volumes to the internal docker volumes
 volumes:
     grafana-volume:
         external: false
     influxdb-volume:
         external: false
+    postgres-volume:
+        external: false
+    
 
 # how to start stack
 # docker-compose -f iot_stack.yml up -d

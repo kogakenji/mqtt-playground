@@ -87,7 +87,7 @@ run = True
 while run:
     # msg = random.randint(15, 50)
     celsius_temp = sensor.getCelsius()
-    print(celsius_temp) 
+    print(celsius_temp)
     client.publish("/auscasa/temperature", celsius_temp)
     time.sleep(15*60)  # wait 15 minutes between measurements
     # client.publish("/auscasa", "OFF")
