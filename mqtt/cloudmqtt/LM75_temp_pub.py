@@ -17,6 +17,6 @@ sensor = LM75.LM75()
 while True:
     celsius_temp = sensor.getCelsius()
     print(celsius_temp)
-    client.publish("/auscasa/temperature", celsius_temp)
+    client.publish("/auscasa/raspberry/temperature", celsius_temp)
     time.sleep(15*60)  # wait 15 minutes 
 
