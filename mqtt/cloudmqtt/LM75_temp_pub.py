@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import paho.mqtt.client as mqtt
-import LM75
+import sensors.raspberry.LM75.LM75 as LM75
 import time
 
 
