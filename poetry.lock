@@ -74,7 +74,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.5.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "passive checker of Python programs"
 name = "pyflakes"
 optional = false
@@ -90,7 +90,7 @@ python-versions = "*"
 version = "3.4"
 
 [metadata]
-content-hash = "cf902a2d6c3ee06073c121549bd55c2b8b560f32719a189d481e2622a8d60207"
+content-hash = "45dd57cac37fc0bf18898a7626a92ce88ae636ebdd76f7a1a13bd7edd070d7af"
 python-versions = "^3.6"
 
 [metadata.hashes]

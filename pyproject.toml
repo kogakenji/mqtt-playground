@@ -8,6 +8,7 @@ authors = ["Kenji Koga <koga.k3nj1@gmail.com>"]
 python = "^3.6"
 paho-mqtt = "^1.4"
 esptool = "^2.7"
+pyflakes = "^2.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.7"
